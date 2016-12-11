@@ -1,0 +1,17 @@
+<div class="row">
+	<ul class="list-group">
+		<li ng-if='narrowItDown.found.length===0' class="list-group-item">
+			<div class="emptyMessage" role="alert">Nothing found</div>
+	  </li>
+
+		<li class="list-group-item" ng-repeat="item in narrowItDown.found">
+		<p>
+			<b>{{ item.short_name }} - {{ item.name }}</b>
+			<button ng-click="narrowItDown.onRemove({ index: $index });">Don't want this one!</button>
+		</p>
+		<p>
+			{{ item.description }}
+		</p>
+		</li>
+	</ul>
+</div>
